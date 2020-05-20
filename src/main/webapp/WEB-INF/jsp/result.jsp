@@ -67,6 +67,8 @@
             <p class="my-5">
                 <a href="${pageContext.request.contextPath}/create.html" class="btn btn-primary"><i
                         class="fas fa-user-plus ml-2"></i><s:message code="msg.addpatient"/></a>
+                <a href="${pageContext.request.contextPath}/index.html" class="btn btn-primary"><i
+                        class="fas fa-home ml-2"><s:message code="msg.homepage" /></i></a>
             </p>
         </div>
     </div>

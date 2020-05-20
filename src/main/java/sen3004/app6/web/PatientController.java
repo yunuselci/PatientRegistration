@@ -3,14 +3,17 @@ package sen3004.app6.web;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import sen3004.app6.CustomValidationController;
 import sen3004.app6.model.Patient;
 import sen3004.app6.service.PatientServiceImpl;
 
@@ -19,6 +22,31 @@ public class PatientController {
 
     @Autowired
     PatientServiceImpl service;
+
+    @Autowired
+    CustomValidationController customValidationController;
+
+    @InitBinder
+    protected void initBinder(final WebDataBinder binder){
+        binder.addValidators(customValidationController);
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource
+                = new ReloadableResourceBundleMessageSource();
+
+        messageSource.setBasename("classpath:messages");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
+    @Bean
+    public LocalValidatorFactoryBean getValidator() {
+        LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
+        bean.setValidationMessageSource(messageSource());
+        return bean;
+    }
 
     @RequestMapping(value = {"/", "index.html"}, method = RequestMethod.GET)
     public String getIndex() {

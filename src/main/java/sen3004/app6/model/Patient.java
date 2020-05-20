@@ -20,6 +20,7 @@ public class Patient {
     @Size(min = 3, max = 50)
     @Column(name = "lname")
     private String lastName;
+    @NotNull
     @Past
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column(name = "dob")
@@ -28,6 +29,7 @@ public class Patient {
     @Column(name = "age")
     private int age;
     @Email
+    @NotEmpty
     @Column(name = "email")
     private String email;
     @Pattern(regexp = "[0-9\\s]{12}")

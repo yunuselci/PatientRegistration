@@ -53,11 +53,16 @@
                             <span class="text-danger"><form:errors path="phone"/></span>
                         </div>
                         <div class="form-group col-md-8">
-                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <input type="submit" class="btn btn-primary" value=<s:message code="msg.submit" />>
                         </div>
                     </div>
                 </form:form>
-                <p>You can view a list of existing patient <a href="${pageContext.request.contextPath}/list.html">here</a>.</p>
+                <p class="my-5">
+                    <a href="${pageContext.request.contextPath}/list.html" class="btn btn-primary"><i
+                            class="fas fa-user ml-2"><s:message code="msg.patientlist" /></i></a>
+                    <a href="${pageContext.request.contextPath}/index.html" class="btn btn-primary"><i
+                            class="fas fa-home ml-2"><s:message code="msg.homepage" /></i></a>
+                </p>
             </div>
         </div>
     </div>

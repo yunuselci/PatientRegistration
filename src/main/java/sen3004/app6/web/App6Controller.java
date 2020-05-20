@@ -20,6 +20,13 @@ public class App6Controller {
 	@Autowired
 	App6Service service;
 
+	@RequestMapping(value = {"/", "index.html"}, method = RequestMethod.GET)
+	public String getIndex() {
+		return "index";
+	}
+
+
+
 	@RequestMapping(value = { "/display-form", "create.html" }, method = RequestMethod.GET)
 	public ModelAndView displayForm() {
 		ModelAndView mv = new ModelAndView("form");

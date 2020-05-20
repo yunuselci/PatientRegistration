@@ -31,20 +31,20 @@
 
                             <tr>
                                 <th></th>
-                                <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Date of Birth</th>
-                                <th>Age</th>
-                                <th>Email</th>
-                                <th>Phone</th>
+                                <th><s:message code="msg.id"/></th>
+                                <th><s:message code="msg.firstname"/></th>
+                                <th><s:message code="msg.lastname"/></th>
+                                <th><s:message code="msg.dateOfBirth"/></th>
+                                <th><s:message code="msg.age"/></th>
+                                <th><s:message code="msg.email"/></th>
+                                <th><s:message code="msg.phone"/></th>
                             </tr>
                             </thead>
                             <c:forEach items="${people}" var="p">
                                 <javatime:format value="${p.dateOfBirth}" pattern="dd-MM-yyyy" var="formattedDate"/>
                                 <tbody>
                                 <tr>
-                                    <td><a href="/delete/${p.id}"><img src="/img/delete.png" width="20"/></a></td>
+
                                     <td>${p.id}</td>
                                     <td>${p.firstName}</td>
                                     <td>${p.lastName}</td>
@@ -52,6 +52,8 @@
                                     <td>${p.age}</td>
                                     <td>${p.email}</td>
                                     <td>${p.phone}</td>
+                                    <td><a href="/delete/${p.id}"class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                    <td><a href="/edit/${p.id}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a> </td>
 
                                 </tr>
                                 </tbody>

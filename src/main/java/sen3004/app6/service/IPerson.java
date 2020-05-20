@@ -12,4 +12,7 @@ public interface IPerson {
 	public void create(Person person);
 	
 	public void delete(long id);
+
+	public void update(Person person);
+
 }

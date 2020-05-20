@@ -35,7 +35,11 @@ public class App6Service implements IPerson {
 	@Override
 	public void delete(long id) {
 		repository.delete(id);
-		
 	}
-	
+
+	@Override
+	public void update(Person person) {
+		repository.update(person);
+	}
+
 }

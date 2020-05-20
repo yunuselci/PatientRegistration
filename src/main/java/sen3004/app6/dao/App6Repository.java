@@ -27,10 +27,12 @@ public class App6Repository implements IPerson {
 //	public List<Person> findByLastName(String lastName){
 //		return entityManager.createQuery("from Person where lname = :lname", Person.class).setParameter("lname", lastName).getResultList();
 //	}
-//	
-//	public Person update(Person person){
-//		return entityManager.merge(person);
-//	}
+//
+	@Override
+	public void update(Person person) {
+		entityManager.merge(person);
+
+	}
 
 	@Override
 	public void create(Person person) {

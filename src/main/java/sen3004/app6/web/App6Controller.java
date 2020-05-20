@@ -55,10 +55,20 @@ public class App6Controller {
 	public ModelAndView list() {
 		ModelAndView mv = new ModelAndView("result");
 		mv.addObject("people", service.findAll());
-		
+
 		return mv;
 	}
-	
+
+	@RequestMapping(value = {"/edit/{id}"}, method = RequestMethod.GET)
+	public ModelAndView editlist(@PathVariable long id){
+		ModelAndView mv = new ModelAndView(
+				"update"
+		);
+		mv.addObject("person",service.findById(id));
+		return mv;
+	}
+
+
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable long id) {
 		ModelAndView mv = new ModelAndView("result");

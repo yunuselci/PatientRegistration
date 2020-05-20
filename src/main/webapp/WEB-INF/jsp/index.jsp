@@ -26,7 +26,7 @@
             </select>
             <p class="my-5">
                 <a href="${pageContext.request.contextPath}/display-form" class="btn btn-primary"><i
-                        class="fas fa-user-plus ml-2"><s:message code="msg.addperson" /></i></a>
+                        class="fas fa-user-plus ml-2"><s:message code="msg.addpatient" /></i></a>
             </p>
         </div>
     </div>

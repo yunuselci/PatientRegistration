@@ -7,29 +7,29 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sen3004.app6.dao.App6Repository;
-import sen3004.app6.model.Person;
+import sen3004.app6.dao.PatientRepository;
+import sen3004.app6.model.Patient;
 
 @Service
 @Transactional
-public class App6Service implements IPerson {
+public class PatientServiceImpl implements PatientService {
 
 	@Autowired
-	App6Repository repository;
+    PatientRepository repository;
 	
 	@Override
-	public List<Person> findAll() {
+	public List<Patient> findAll() {
 		return repository.findAll();
 	}
 
 	@Override
-	public Person findById(long id) {
+	public Patient findById(long id) {
 		return repository.findById(id);
 	}
 
 	@Override
-	public void create(Person person) {
-		repository.create(person);
+	public void create(Patient patient) {
+		repository.create(patient);
 	}
 
 	@Override
@@ -38,8 +38,8 @@ public class App6Service implements IPerson {
 	}
 
 	@Override
-	public void update(Person person) {
-		repository.update(person);
+	public void update(Patient patient) {
+		repository.update(patient);
 	}
 
 }

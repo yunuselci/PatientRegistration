@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import sen3004.app6.model.Person;
-import sen3004.app6.service.App6Service;
+import sen3004.app6.model.Patient;
+import sen3004.app6.service.PatientServiceImpl;
 
 @Controller
-public class App6Controller {
+public class PatientController {
 
     @Autowired
-    App6Service service;
+    PatientServiceImpl service;
 
     @RequestMapping(value = {"/", "index.html"}, method = RequestMethod.GET)
     public String getIndex() {
@@ -29,31 +29,31 @@ public class App6Controller {
     @RequestMapping(value = {"/display-form", "create.html"}, method = RequestMethod.GET)
     public ModelAndView displayForm() {
         ModelAndView mv = new ModelAndView("form");
-        mv.addObject("person", new Person());
+        mv.addObject("patient", new Patient());
 
         return mv;
     }
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
-    public ModelAndView processForm(@Valid @ModelAttribute Person person, BindingResult result) {
+    public ModelAndView processForm(@Valid @ModelAttribute Patient patient, BindingResult result) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("person", person);
+        mv.addObject("patient", patient);
 
         if (result.hasErrors())
             mv.setViewName("form");
         else {
             mv.setViewName("result");
-            service.create(person);
-            mv.addObject("people", service.findAll());
+            service.create(patient);
+            mv.addObject("patients", service.findAll());
         }
 
         return mv;
     }
 
-    @RequestMapping(value = {"/list-people", "list.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/list-patients", "list.html"}, method = RequestMethod.GET)
     public ModelAndView list() {
         ModelAndView mv = new ModelAndView("result");
-        mv.addObject("people", service.findAll());
+        mv.addObject("patients", service.findAll());
 
         return mv;
     }
@@ -61,23 +61,23 @@ public class App6Controller {
     @RequestMapping(value = {"/edit/{id}"}, method = RequestMethod.GET)
     public ModelAndView editList(@PathVariable long id) {
         ModelAndView mv = new ModelAndView("update");
-        mv.addObject("person", service.findById(id));
+        mv.addObject("patient", service.findById(id));
         return mv;
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public ModelAndView update(@Valid @ModelAttribute Person person,
+    public ModelAndView update(@Valid @ModelAttribute Patient patient,
                                BindingResult result,
                                @PathVariable long id
                                ) {
         ModelAndView mv = new ModelAndView();
         if (result.hasErrors()) {
-            person.setId(id);
+            patient.setId(id);
             mv.setViewName("update");
             return mv;
         }
-        service.update(person);
-        mv.addObject("people", service.findAll());
+        service.update(patient);
+        mv.addObject("patients", service.findAll());
         mv.setViewName("result");
 
 
@@ -88,7 +88,7 @@ public class App6Controller {
     public ModelAndView delete(@PathVariable long id) {
         ModelAndView mv = new ModelAndView("result");
         service.delete(id);
-        mv.addObject("people", service.findAll());
+        mv.addObject("patients", service.findAll());
 
         return mv;
     }

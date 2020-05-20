@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><s:message code="msg.persons"/></title>
+    <title><s:message code="msg.patients"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -22,9 +22,9 @@
     <div class="card">
         <div class="card-body">
 
-            <h2><s:message code="msg.persons"/></h2>
+            <h2><s:message code="msg.patients"/></h2>
             <c:choose>
-                <c:when test="${fn:length(people) > 0}">
+                <c:when test="${fn:length(patients) > 0}">
                     <div class="col-md-10">
                         <table class="table table-striped table-responsive-md">
                             <thead>
@@ -39,7 +39,7 @@
                                 <th><s:message code="msg.phone"/></th>
                             </tr>
                             </thead>
-                            <c:forEach items="${people}" var="p">
+                            <c:forEach items="${patients}" var="p">
                                 <javatime:format value="${p.dateOfBirth}" pattern="dd-MM-yyyy" var="formattedDate"/>
                                 <tbody>
                                 <tr>
@@ -61,12 +61,12 @@
                     </div>
                 </c:when>
                 <c:otherwise>
-                    <p><s:message code="msg.noperson"/></p>
+                    <p><s:message code="msg.nopatient"/></p>
                 </c:otherwise>
             </c:choose>
             <p class="my-5">
                 <a href="${pageContext.request.contextPath}/create.html" class="btn btn-primary"><i
-                        class="fas fa-user-plus ml-2"></i><s:message code="msg.addperson"/></a>
+                        class="fas fa-user-plus ml-2"></i><s:message code="msg.addpatient"/></a>
             </p>
         </div>
     </div>

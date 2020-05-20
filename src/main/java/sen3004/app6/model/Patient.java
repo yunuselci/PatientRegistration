@@ -8,8 +8,8 @@ import javax.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "person")
-public class Person {
+@Table(name = "patient")
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

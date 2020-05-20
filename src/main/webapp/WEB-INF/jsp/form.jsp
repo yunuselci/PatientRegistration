@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><s:message code="msg.addperson"/></title>
+    <title><s:message code="msg.addpatient"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -16,11 +16,11 @@
 </head>
 <body>
 <div class="container my-5">
-    <h3><s:message code="msg.addperson"/></h3>
+    <h3><s:message code="msg.addpatient"/></h3>
     <div class="card">
         <div class="card-body">
             <div class="col-md-8">
-                <form:form method="post" action="/send" modelAttribute="person">
+                <form:form method="post" action="/send" modelAttribute="patient">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="firstName" class="col-form-label"><s:message code="msg.firstname"/></label>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </form:form>
-                <p>You can view a list of existing people <a href="/list.html">here</a>.</p>
+                <p>You can view a list of existing people <a href="${pageContext.request.contextPath}/list.html">here</a>.</p>
             </div>
         </div>
     </div>

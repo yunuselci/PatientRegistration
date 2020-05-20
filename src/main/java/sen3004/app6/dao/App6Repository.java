@@ -23,11 +23,7 @@ public class App6Repository implements IPerson {
 	public Person findById(long id){
 		return entityManager.find(Person.class, id);
 	}
-	
-//	public List<Person> findByLastName(String lastName){
-//		return entityManager.createQuery("from Person where lname = :lname", Person.class).setParameter("lname", lastName).getResultList();
-//	}
-//
+
 	@Override
 	public void update(Person person) {
 		entityManager.merge(person);

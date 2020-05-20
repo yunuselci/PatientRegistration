@@ -66,7 +66,10 @@ public class App6Controller {
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public ModelAndView update(@Valid @ModelAttribute Person person, @PathVariable long id, BindingResult result) {
+    public ModelAndView update(@Valid @ModelAttribute Person person,
+                               BindingResult result,
+                               @PathVariable long id
+                               ) {
         ModelAndView mv = new ModelAndView();
         if (result.hasErrors()) {
             person.setId(id);

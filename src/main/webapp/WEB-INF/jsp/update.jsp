@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-8">
-                <form:form method="post" action="/update/{id}(id=${person.id})" modelAttribute="person">
+                <form:form method="post" action="/update/${person.id}" modelAttribute="person">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="firstName" class="col-form-label"><s:message code="msg.firstname"/></label>

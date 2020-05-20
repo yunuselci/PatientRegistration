@@ -24,11 +24,6 @@
                 <option value="en"><s:message code="lang.eng" /></option>
                 <option value="tr"><s:message code="lang.tr" /></option>
             </select>
-            <div class="col-md-8">
-                <h1>
-                    <s:message code="greeting" text="default"/>
-                </h1>
-            </div>
             <p class="my-5">
                 <a href="${pageContext.request.contextPath}/display-form" class="btn btn-primary"><i
                         class="fas fa-user-plus ml-2"><s:message code="msg.addperson" /></i></a>

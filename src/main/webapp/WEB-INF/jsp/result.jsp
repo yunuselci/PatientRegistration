@@ -30,7 +30,6 @@
                             <thead>
 
                             <tr>
-                                <th></th>
                                 <th><s:message code="msg.id"/></th>
                                 <th><s:message code="msg.firstname"/></th>
                                 <th><s:message code="msg.lastname"/></th>

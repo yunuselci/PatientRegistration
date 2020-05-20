@@ -1,0 +1,49 @@
+html{
+	margin-left: 20px;
+	background-color: #e9eee3;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 20px;	
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #4c9599;
+}
+
+table, td{
+	border-collapse: collapse;
+	border: 0px solid #000000;
+	padding: 5px;
+	font-size: 18px;
+}
+
+th{
+	background-color: #a1ccce;
+	color: #000000;
+	padding: 7px;
+}
+
+.bordered td{
+	border: 1px solid #000000;
+}
+
+.box {
+	border: 1px solid #000000;
+}
+
+input {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 16px;	
+}
+
+input[type=submit]{
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 20px;	
+}
+
+a {
+	color: #1c52a8;
+}
+
+.error{
+	color: #ff0000;
+}

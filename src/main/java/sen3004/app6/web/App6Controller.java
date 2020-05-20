@@ -74,6 +74,7 @@ public class App6Controller {
         if (result.hasErrors()) {
             person.setId(id);
             mv.setViewName("update");
+            return mv;
         }
         service.update(person);
         mv.addObject("people", service.findAll());

@@ -28,6 +28,21 @@
 				<td><form:errors path="dateOfBirth" cssClass="error" /></td>
 			</tr>
 			<tr>
+				<td>Age:</td>
+				<td><form:input path="age" /></td>
+				<td><form:errors path="age" cssClass="error" /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><form:input path="email" /></td>
+				<td><form:errors path="email" cssClass="error" /></td>
+			</tr>
+			<tr>
+				<td>Phone:</td>
+				<td><form:input path="phone" /></td>
+				<td><form:errors path="phone" cssClass="error" /></td>
+			</tr>
+			<tr>
 				<td colspan="3"><input type="submit" value="Submit" /></td>
 			</tr>
 		</table>

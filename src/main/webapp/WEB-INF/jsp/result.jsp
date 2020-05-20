@@ -22,6 +22,9 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Date of Birth</th>
+					<th>Age</th>
+					<th>Email</th>
+					<th>Phone</th>
 				</tr>
 				<c:forEach items="${people}" var="p">
 					<javatime:format value="${p.dateOfBirth}" pattern="dd-MM-yyyy" var="formattedDate"/>
@@ -31,6 +34,10 @@
 						<td>${p.firstName}</td>
 						<td>${p.lastName}</td>
 						<td>${formattedDate}</td>
+						<td>${p.age}</td>
+						<td>${p.email}</td>
+						<td>${p.phone}</td>
+
 					</tr>
 				</c:forEach>
 			</table>

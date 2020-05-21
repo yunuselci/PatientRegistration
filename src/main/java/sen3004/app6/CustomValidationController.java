@@ -15,7 +15,7 @@ public class CustomValidationController implements Validator {
     public void validate(Object target, Errors errors) {
         Patient patient = (Patient) target;
         if (patient.getFirstName().equalsIgnoreCase("RTE")) {
-            errors.rejectValue("firstName", null, "The patient name cannot be RTE");
+            errors.rejectValue("firstName", "msg.customerror" );
         }
     }
 }

@@ -1,6 +1,7 @@
 package sen3004.app6.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -35,6 +36,7 @@ public class Patient {
     @Pattern(regexp = "[0-9\\s]{12}")
     @Column(name = "phone")
     private String phone;
+
 
     public long getId() {
         return id;
@@ -92,5 +94,5 @@ public class Patient {
         this.phone = phone;
     }
 
-
+    
 }

@@ -3,6 +3,7 @@ package sen3004.app6.web;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
@@ -16,6 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 import sen3004.app6.CustomValidationController;
 import sen3004.app6.model.Patient;
 import sen3004.app6.service.PatientServiceImpl;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class PatientController {

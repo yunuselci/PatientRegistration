@@ -1,4 +1,4 @@
-# SpringBootTodoAppWithFrontEnd
+# Spring Boot CRUD, Validation, H2 Database, Internationalization
 
 Todo App - Spring Boot
 

@@ -1,6 +1,6 @@
 # Spring Boot CRUD, Validation, H2 Database, Internationalization
 
-Todo App - Spring Boot
+CRUD - Spring Boot
 
 Index:
 ![image](https://user-images.githubusercontent.com/56027479/123662031-bcf96e00-d83d-11eb-90ff-f70b8f930031.png)
